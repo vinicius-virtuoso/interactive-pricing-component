@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <main class="main">
+    <div class="bg-title">
+      <h1 class="title">Simple, traffic-based pricing</h1>
+      <p class="intro">Sign-up for our 30-day trial. No credit card required.</p>
+    </div>
+    
+    <div class="box-plans">
+      <p class="total-pages">
+        <span class="page-number">100K</span> 
+        pageviews
+      </p>
+      <div class="box-input-range">
+        <input type="range" name="price" id="priceRange" min="0" step="25" max="100" value="50">
+      </div>
+      <div class="box-price-text">
+        <p>$ 
+          <span class="price">16.00</span> 
+          <span class="time">/ month</span>
+        </p>
+      </div>
+      <div class="box-toggle">
+        <span class="billing">Monthly Billing</span>
+        <div class="check">
+          <input type="checkbox" name="checkPrice" id="checkPrice">
+        </div>
+        <span class="billing">Yearly Billing</span>
+        <span class="discount">-25% 
+          <span class="no-mobile">discount</span>
+        </span>
+      </div>
+
+      <div class="list-last">
+        <ul class="list-checks">
+          <li><img src="./images/icon-check.svg" alt="check">Unlimited websites</li>
+          <li><img src="./images/icon-check.svg" alt="check">100% data ownership</li>
+          <li><img src="./images/icon-check.svg" alt="check">Email reports</li>
+        </ul>
+        <button class="btn">Start my trial</button>
+      </div>
+    </div>
+  </main>
+  
+</body>
+</html>

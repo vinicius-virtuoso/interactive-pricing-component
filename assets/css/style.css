@@ -94,24 +94,12 @@ p.intro {
   -webkit-appearance: none;
   width: 100%;
   height: 10px;
-
-  border-radius: 5px;
-  border: 0;
-  outline: none;
-  background: var(--Light-Grayish-Blue-Empty-Slider-Bar);
-  position: relative;
-  cursor: pointer;
-
-}
-.box-input-range #priceRange::after{
-  content: '';
-  width: 50%;
-  height: 100%;
-  background: var(--Soft-Cyan-Full-Slider-Bar);
-  position: absolute;
-  z-index: 1;
-  border-radius: 5px 0 0 5px;
-  
+  border-radius: 10px;
+  background: linear-gradient(to right,
+    hsl(174,77%,80%) 0%,
+    hsl(174,77%,80%) 50%,
+    hsl(224,65%,95%) 0%,
+    hsl(224,65%,95%) 50%);
 }
 input#priceRange::-webkit-slider-thumb {
   appearance: none;
@@ -127,9 +115,12 @@ input#priceRange::-webkit-slider-thumb {
   position: relative;
   z-index: 2;
   cursor: pointer;
+  box-shadow: 0px 5px 15px var(--StrongCyan-Slider-Background);
 }
-input#priceRange:active::-webkit-slider-thumb,input#priceRange:hover::-webkit-slider-thumb,input#priceRange:focus::-webkit-slider-thumb {
+input#priceRange:active::-webkit-slider-thumb,
+input#priceRange:hover::-webkit-slider-thumb{
   opacity: .8;
+  box-shadow: 0px 5px 15px var(--StrongCyan-Slider-Background);
 }
 .box-price-text {
   display: flex;
@@ -162,7 +153,7 @@ input#priceRange:active::-webkit-slider-thumb,input#priceRange:hover::-webkit-sl
   padding: 1rem 0;
   gap: 5px;
 
-  border-bottom: 1px solid var(--Light-Grayish-Blue-Empty-Slider-Bar);
+  border-bottom: 2px solid var(--Light-Grayish-Blue-Empty-Slider-Bar);
 }
 .discount {
   font-size: 10px;
@@ -189,6 +180,7 @@ input#priceRange:active::-webkit-slider-thumb,input#priceRange:hover::-webkit-sl
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: .3s ease;
 }
 #checkPrice::after {
   content: '';
@@ -200,9 +192,9 @@ input#priceRange:active::-webkit-slider-thumb,input#priceRange:hover::-webkit-sl
   left: 5px;
   transition: .3s ease;
 }
-#checkPrice:checked {
-  background: var(--StrongCyan-Slider-Background);
-}
+#checkPrice:hover ,#checkPrice:checked {
+  background: var(--Soft-Cyan-Full-Slider-Bar);
+} 
 #checkPrice:checked::after {
   left: 50%;
 }
@@ -285,7 +277,7 @@ input#priceRange:active::-webkit-slider-thumb,input#priceRange:hover::-webkit-sl
     grid-area: title;
     font-size: var(--Font-size);
     text-align: left;
-    padding: 2rem;
+    padding: 2rem 3rem;
   }
   .box-price-text {
     text-align: right;
@@ -300,8 +292,9 @@ input#priceRange:active::-webkit-slider-thumb,input#priceRange:hover::-webkit-sl
     padding: 1.5rem 3rem;
   }
   .discount {
-    font-size: var(--Font-size);
-    padding: 0 .5rem;
+    font-size: var(--Font-size-mini);
+    padding: .1rem .5rem;
+    margin-left: 1rem;
   }
   .no-mobile {
     display: block;
